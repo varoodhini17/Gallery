@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+<head>
+
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="{% static 'gal.css' %}"
+</head>
+<body>
+
+<h1>My Image Gallery</h1>
+
+<div class="gallery" id="gallery">
+    <img src="{% static 'cat1.jpg' %}" onclick="openImage(this)">
+    <img src="{% static 'cat2.jpg' %}" onclick="openImage(this)">
+    <img src="{% static 'cat3.jpg' %}" onclick="openImage(this)">
+    <img src="{% static 'cat4.jpg' %}" onclick="openImage(this)">
+    <img src="{% static 'cat5.jpg' %}" onclick="openImage(this)">
+</div>
+
+<div id="zoombox">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img id="zoombox-img">
+</div>
+<script>
+    function openImage(img) {
+        const zoombox = document.getElementById("zoombox");
+        const zoomboxImg = document.getElementById("zoombox-img");
+        const gallery = document.getElementById("gallery");
+
+        zoombox.style.display = "flex";
+        zoomboxImg.src = img.src;
+        gallery.classList.add("fade");
+    }
+
+    function closeImage() {
+        document.getElementById("zoombox").style.display = "none";
+        document.getElementById("gallery").classList.remove("fade");
+    }
+</script>
+
+</body>
+</html>
