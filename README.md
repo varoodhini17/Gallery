@@ -1,4 +1,4 @@
-# Ex.06 Design of Interactive Image Gallery
+# Ex.07 Design of Interactive Image Gallery
 # Date:15-12-25
 # AIM:
 To design a web application for an inteactive image gallery with minimum five images.
